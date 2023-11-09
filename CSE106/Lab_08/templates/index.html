@@ -3,7 +3,8 @@
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="styling.css">
+        <link rel="stylesheet" type="text/css" href="static/styling.css">
+        <script src="static/script.js"></script>
         <title>Lab 8</title>
     </head>
 
@@ -16,19 +17,17 @@
     </h1>
 
     <div class="box">
-        <form>
-            <!-- Username text box input-->
-            <label  for="text-input">Username:</label>
-            <input type="text" href="" id="usernameInput" name="text-input">
-            
-             <!-- Password text box input-->
-            <label  for="text-input">Password:</label>
-            <input type="text" id="usernameInput" name="text-input">
-
-            <!-- submit button-->
-            <input class="button" type="submit" id ="submitButton" value="Submit">
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <label for="Username">Username:</label>
+            <input type="text" id="Username" placeholder="Enter your username">
+    
+            <label for="Password">Password:</label>
+            <input type="password" id="Password" placeholder="Enter your password">
+    
+            <button type="submit">Login</button>
         </form>
     </div>
+    
 
     
 </body>
