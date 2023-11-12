@@ -14,13 +14,17 @@ function setPassword(){
 $("#loginbutton").on("click", function(){
     let username = $("#user_name").val();
     let password = $("#password").val()
+    // console.log(username);
+    // console.log(password);
     if (username !== "" && password !== "") {
+        // console.log("test1");
         $.ajax({
             url: "http://127.0.0.1:5000/",
             type: "POST",
             data: JSON.stringify({"username" : username, "password" : password}),
             contentType: "application/JSON",
             success: function(response){
+                // console.log("test2");
                 window.location.href = "http://127.0.0.1:5000/" + response;
             }, 
             error: function(jqXHR, textStatus, errorThrown){
