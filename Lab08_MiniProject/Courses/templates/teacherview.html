@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class Manage</title>
+        <link href="../static/teacher.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class='teacher_view_classes'>
+            <h1 class = "center">Teacher Page</h1>
+            <h2>{{ teacher }}</h2>
+            <table id = "teachercourses">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Teacher</th>
+                        <th>Time</th>
+                        <th>Enrolled</th>
+                        <th>Capacity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        <td>
+                            <a href = "/teacher/{{course.className}}">{{course.className}}</a>
+                        </td>
+                        <td>{{course.teacher}}</td>
+                        <td>{{course.time}}</td>
+                        <td>{{course.enrolled}}</td>
+                        <td>{{course.capacity}}</td>
+                    </tr>
+                    {% endfor %}</tbody>
+            </table><br>
+            <button type="button" class = "logout" id = "logoutTeacherView">Log Out</button>
+            <script src="../static/script.js"></script>
+        </div>
+    </body>
+</html>

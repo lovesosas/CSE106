@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enrollment</title>
+		<meta charset="UTF-8">
+        <link rel="stylesheet" href="/static/student.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+	<body>
+		<div class='student_edit'>
+            <h1 class = "center">Add Courses</h1>
+            <table class = "center" id = "availableCourses">
+                <thead>
+                    <tr>
+                        <th>Couse Name</th>
+                        <th>Teacher</th>
+                        <th>Time</th>
+                        <th>Enrolled</th>
+                        <th>Capacity</th>
+						<th>Add/Drop</th>
+                    </tr>
+                </thead>
+                <tbody>
+				{% for course in courses %}
+					<tr>
+						<td>{{course.className}}</td>
+						<td>{{course.teacher}}</td>
+						<td>{{course.time}}</td>
+						<td>{{course.enrolled}}</td>
+						<td>{{course.capacity}}</td>
+						{% if course.classId in enrollment%}
+							<td>
+								<p>{{course.className}}</p>
+							</td>
+						{% elif course.capacity == course.enrolled %}
+							<td>Class {{course.className}} is Full</td>
+						{% else %}
+							<td>
+
+								<p>{{course.className}}</p>
+							</td>
+						{% endif %}
+					</tr>
+				{% endfor %}
+				</tbody>
+            </table><br>
+			<input type="text" id="adding_class" name="Class to Add">
+			<button type="button" class = "s_add_classes" id = "s_add_classes">Add Class</button><br>
+			<button type="button" class = "s_view_classes" id = "s_view_classes">Return to View Classes</button><br>
+            <button type="button" class = "logout" id = "logoutStudentEdit">Log Out</button>
+		</div>
+	<script src="/static/script.js"></script>
+	</body>
+</html>

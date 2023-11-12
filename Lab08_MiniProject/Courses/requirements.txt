@@ -1,0 +1,22 @@
+certifi==2022.12.7
+charset-normalizer==3.1.0
+click @ file:///home/conda/feedstock_root/build_artifacts/click_1666798198223/work
+Flask @ file:///home/conda/feedstock_root/build_artifacts/flask_1676592993069/work
+Flask-Admin==1.6.1
+Flask-Cors==3.0.10
+Flask-Login==0.6.2
+Flask-SQLAlchemy==3.0.3
+greenlet @ file:///Users/runner/miniforge3/conda-bld/greenlet_1674937716576/work
+idna==3.4
+importlib-metadata @ file:///home/conda/feedstock_root/build_artifacts/importlib-metadata_1672612343532/work
+itsdangerous @ file:///home/conda/feedstock_root/build_artifacts/itsdangerous_1648147185463/work
+Jinja2 @ file:///home/conda/feedstock_root/build_artifacts/jinja2_1654302431367/work
+MarkupSafe @ file:///Users/runner/miniforge3/conda-bld/markupsafe_1674135867894/work
+requests==2.28.2
+six==1.16.0
+SQLAlchemy @ file:///Users/runner/miniforge3/conda-bld/sqlalchemy_1679231954230/work
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1678559861143/work
+urllib3==1.26.15
+Werkzeug @ file:///home/conda/feedstock_root/build_artifacts/werkzeug_1676411946679/work
+WTForms==3.0.1
+zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1677313463193/work

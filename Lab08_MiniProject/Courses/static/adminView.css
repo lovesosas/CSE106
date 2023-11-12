@@ -1,0 +1,71 @@
+/* Style for the header */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Style for the table */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    border-color: white;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    color: black;
+    background-color: white;
+    
+  }
+  
+  tr:hover {
+    background-color: rgb(28, 27, 27);
+  }
+  
+  /* Style for the form */
+  body{
+    background-color: rgb(216, 163, 163);
+  }
+
+  form {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    color: white;
+  }
+  
+  input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: rgb(227, 89, 89);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  
+  button:hover {
+    background-color: #ff0400;
+  }
+  
+  /* Style for the page wrapper */
+  div {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  

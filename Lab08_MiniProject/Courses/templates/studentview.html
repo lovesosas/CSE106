@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student View</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../static/student.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class='student_view'>
+            <h1 class = "center">Student Page</h1>
+            <h2>Welcome {{ student }}!</h2>
+            <table id = "studentcourses">
+                <thead> <!-- Table headings -->
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Teacher</th>
+                        <th>Time</th>
+                        <th>Enrolled</th>
+                        <th>Capacity</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- Table Content -->
+                    {% for course in courses %}
+                            <!-- Course Content -->
+                    <tr>
+                        <td>{{course.className}}</td>
+                        <td>{{course.teacher}}</td>
+                        <td>{{course.time}}</td>
+                        <td>{{course.enrolled}}</td>
+                        <td>{{course.capacity}}</td>
+                    </tr>
+                    {% endfor %}</tbody>
+            </table><br>
+
+            <button type="button" class = "s_edit_classes" id = "s_edit_classes">Add Classes</button><br>
+            <script src="../static/script.js"></script>
+            <button type="button" class = "logout" id = "logoutStudentView">Log Out</button>
+            <script src="../static/script.js"></script>
+        </div>
+    </body>
+</html>
