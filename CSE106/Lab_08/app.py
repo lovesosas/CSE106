@@ -39,8 +39,8 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
 def create_admin_user():
-    admin_username = 'admin' 
-    admin_password = 'admin123'  
+    admin_username = 'admin'
+    admin_password = 'admin123'  # You should move this to a configuration file or environment variable.
 
     existing_admin = User.query.filter_by(username=admin_username).first()
     if not existing_admin:
@@ -53,6 +53,9 @@ def create_admin_user():
         db.session.commit()
         print("Admin user created")
     else:
+        # to not reset the password every time, comment the following lines.
+        existing_admin.set_password(admin_password)
+        db.session.commit()
         print("Admin user already exists")
 
 
@@ -78,15 +81,17 @@ def login():
         username = request.form['username']
         password = request.form['password']
         user = User.query.filter_by(username=username).first()
-
+        #print(user)
+        
         if user and user.check_password(password):
+            #print("debug check")
             login_user(user)
             if user.role == 'student':
                 return redirect(url_for('myStudentCourses'))
             elif user.role == 'teacher':
                 return redirect(url_for('teacherCourses'))
             elif user.role == 'admin':
-                return redirect(url_for('admin_data'))
+                return redirect(url_for('adminData'))
             else:
                 return redirect(url_for('index'))
         else:
@@ -125,7 +130,7 @@ def add_user():
     user.set_password(password)
     db.session.add(user)
     db.session.commit()
-    return redirect(url_for('admin_data'))
+    return redirect(url_for('adminData'))
 
 @app.route('/admin/edit_user/<int:user_id>', methods=['POST'])
 def edit_user(user_id):
@@ -134,17 +139,17 @@ def edit_user(user_id):
     user.set_password(request.form['password'])
     user.role = request.form['role']
     db.session.commit()
-    return redirect(url_for('admin_data'))
+    return redirect(url_for('adminData'))
 
 @app.route('/admin/delete_user/<int:user_id>', methods=['POST'])
 def delete_user(user_id):
     user = User.query.get(user_id)
     db.session.delete(user)
     db.session.commit()
-    return redirect(url_for('admin_data'))
+    return redirect(url_for('adminData'))
 
 @app.route('/admin')
-def admin_data():
+def adminData():
     users = User.query.all()
     return render_template('adminData.html', users=users)
 
