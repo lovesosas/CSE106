@@ -27,5 +27,5 @@ function handleLogin(event) {
     });
 }
 
-// Attach the event listener to the form submission if needed
-document.getElementById('loginForm').addEventListener('submit', handleLogin);
+
+// document.getElementById('loginForm').addEventListener('submit', handleLogin);
