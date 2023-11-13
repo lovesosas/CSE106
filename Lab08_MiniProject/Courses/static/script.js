@@ -228,7 +228,7 @@ $("#logoutAdmin").on("click", function(){
 });
 
 // Redirect to StudentEdit view
-$("#s_edit_classes").on("click", function(){
+$("#s_add_classes").on("click", function(){
     $.ajax({
         url: "http://127.0.0.1:5000/student",
         type: "GET",
@@ -242,7 +242,7 @@ $("#s_edit_classes").on("click", function(){
 });
 
 // Adding courses in studentEdit.html
-$("#s_add_classes").on("click", function(){
+$("#s_edit_classes").on("click", function(){
     const val = $("#adding_class").val();
     $.ajax({
         url: "http://127.0.0.1:5000/student/courses",

@@ -1,77 +1,87 @@
-
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    color: rgb(0, 0, 0);
-  }
-  h2{
-    padding: 10px;
-    color: #000;
-    
-  }
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: black; /* Changed to black */
+}
+
+h2 {
+  padding: 10px;
+  color: black; /* Changed to black */
+}
 
 button {
-    background-color: rgb(175, 76, 76);
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 1rem;
-  }
-  
-  button:hover {
-    background-color: #000000;
-  }
+  background-color: rgb(203, 80, 80);
+  color: rgb(0, 0, 0);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
 
-  .student_view{
-    text-align: center;
-    margin: auto;
-    width: 1100px;
-    height: 500px;
-    background-color: #efdada;
-    border: 3px solid #000;
-    padding: 20px;
-    position: absolute;
-    top: 15%;
-    left: 12.5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  #studentcourses{
-    text-align: center;
-    margin: auto;
-    padding: 0.5rem 1rem;
-    color: white;
-  }
+button:hover {
+  background-color: #f22c2c;
+}
 
-  table, th, td {
-    border: 1px solid white;
-    border-collapse: collapse;
-    padding: 15px;
-    margin: 2pc;
-    color: white;
-    text-align: center;
-  }
-  body{
-    background-color: rgb(203, 151, 151);
-    text-align: center;
-    margin: auto;
-  }
+.student_view {
+  text-align: center;
+  margin: auto;
+  width: 1100px;
+  height: 500px;
+  background-color: #fbbbbb;
+  border: 3px solid #000;
+  padding: 20px;
+  position: absolute;
+  top: 15%;
+  left: 12.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  td:hover{
-    color: black;
-    background-color: white;
-  }
+#studentcourses {
+  text-align: center;
+  margin: auto;
+  padding: 0.5rem 1rem;
+  color: black; /* Changed to black */
+}
 
-  .center{
-    color: white;
-    text-align: center;
-    margin: auto;
-  }
-  h2{
-    color: white;
-  }
+table, td {
+  border: 1px solid black; /* Changed to black */
+  border-collapse: collapse;
+  padding: 15px;
+  margin: 2pc;
+  color: black; /* Changed to black */
+  text-align: center;
+  background-color: #e79494;
+
+}
+th {
+  border: 1px solid black; /* Changed to black */
+  border-collapse: collapse;
+  padding: 15px;
+  margin: 2pc;
+  color: black; /* Changed to black */
+  text-align: center;
+  background-color: #f35959;
+}
+
+body {
+  background-color: rgb(223, 156, 156);
+  text-align: center;
+  margin: auto;
+  color: black; /* Changed to black */
+}
+
+td:hover {
+  color: black;
+  background-color: rgb(249, 36, 36);
+}
+
+.center {
+  color: black; /* Changed to black */
+  text-align: center;
+  margin: auto;
+}
