@@ -231,7 +231,7 @@ def admin():
                     db.session.commit()
                     return "success"
 
-# Student Views of Courses and editing to enroll into courses
+
 # Student Views
 @app.route("/student")
 @login_required
@@ -244,8 +244,9 @@ def studentView():
     return render_template('studentview.html', courses = classes, student = current_user.name)
 
 
+
 # Student edit courses
-@app.route("/student/courses", methods=["GET", "POST"])
+@app.route("/student/courses", methods=["GET", "POST", "DELETE"])
 @login_required
 def studentEdit():
     # Editing their courses
@@ -259,7 +260,21 @@ def studentEdit():
             db.session.commit()
             return "success"
         # Getting information
-    if request.method == "GET":
+
+    elif request.method == "DELETE":
+        data = request.get_json()
+        course = Courses.query.filter_by(className=data["class_name"]).first()
+        if course:
+            enrollment = Enrollment.query.filter_by(usersId=current_user.userId, classesId=course.classId).first()
+            if enrollment:
+                db.session.delete(enrollment)
+                course.enrolled = course.enrolled - 1
+                db.session.commit()
+                return "success"
+        return "failure", 404
+
+
+    elif request.method == "GET":
         enrolled = Enrollment.query.filter_by(usersId = current_user.userId)
         enrolledClasses = []
         for course in enrolled:
@@ -268,7 +283,6 @@ def studentEdit():
 
 
 # Teacher
-# Teachers initial view of courses
 @app.route("/teacher")
 @login_required
 def teacher_view():

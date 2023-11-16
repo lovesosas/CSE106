@@ -74,3 +74,32 @@ td:hover {
   text-align: center;
   margin: auto;
 }
+
+
+.enroll-button {
+  background-color: #28a745; 
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.enroll-button:hover {
+  background-color: #218838; 
+}
+
+.unenroll-button {
+  background-color: #dc3545; 
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.unenroll-button:hover {
+  background-color: #c82333; 
+}

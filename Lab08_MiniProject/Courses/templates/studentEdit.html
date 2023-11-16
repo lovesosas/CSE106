@@ -17,7 +17,7 @@
                         <th>Time</th>
                         <th>Enrolled</th>
                         <th>Capacity</th>
-						<th>Add/Drop</th>
+						<th>Add/Drop Class</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,22 +30,25 @@
 						<td>{{course.capacity}}</td>
 						{% if course.classId in enrollment%}
 							<td>
-								<p>{{course.className}}</p>
+								<button type="button" class="unenroll-button" data-classname="{{ course.className }}">Unenroll</button>
 							</td>
+							<!-- <td>
+								<p>{{course.className}}</p>
+							</td> -->
 						{% elif course.capacity == course.enrolled %}
 							<td>Class {{course.className}} is Full</td>
 						{% else %}
 							<td>
 
-								<p>{{course.className}}</p>
+								<button type="button" class="enroll-button" data-classname="{{ course.className }}">Enroll</button>
 							</td>
 						{% endif %}
 					</tr>
 				{% endfor %}
 				</tbody>
             </table><br>
-			<input type="text" id="adding_class" name="Class to Add">
-			<button type="button" class = "s_add_classes" id = "s_add_classes">Add Class</button><br>
+			<!-- <input type="text" id="adding_class" name="Class to Add">
+			<button type="button" class = "s_add_classes" id = "s_add_classes">Add Class</button><br> -->
 			<button type="button" class = "s_view_classes" id = "s_view_classes">Return to View Classes</button><br>
             <button type="button" class = "logout" id = "logoutStudentEdit">Log Out</button>
 		</div>

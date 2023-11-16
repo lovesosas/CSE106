@@ -217,6 +217,9 @@ $("#unenroll_user").on("click", function(){
     });
 });
 
+
+
+
 // Admin Logout
 $("#logoutAdmin").on("click", function(){
     $.ajax({
@@ -254,6 +257,7 @@ $("#s_add_classes").on("click", function(){
         data: JSON.stringify({"class_name": val}),
         contentType: "application/JSON",
         success: function(){
+            alert("Enrolled successfully!");
             window.location.href = "http://127.0.0.1:5000/student/courses";
         },
         error: function(jqXHR, textStatus, errorThrown){
@@ -261,10 +265,44 @@ $("#s_add_classes").on("click", function(){
         }
     });
 });
+//Student Enroll
+$(".enroll-button").on("click", function() {
+    let courseName = $(this).data("classname");
 
-function student_class_drop(){
-    console.log("Please Contact an Admin to drop the class!");
-}
+    $.ajax({
+        url: "/student/courses",
+        type: "POST",
+        data: JSON.stringify({"class_name": courseName}),
+        contentType: "application/json",
+        success: function(response){
+            alert("Enrolled successfully!");
+            window.location.reload();
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            console.log("Enrollment failed: " + errorThrown);
+        }
+    });
+});
+
+
+// Student Unenroll
+$(".unenroll-button").on("click", function() {
+    let courseName = $(this).data("classname");
+
+    $.ajax({
+        url: "/student/courses",
+        type: "DELETE",
+        data: JSON.stringify({"class_name": courseName}),
+        contentType: "application/json",
+        success: function(response){
+            alert("Unenrolled successfully!");
+            window.location.reload();
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            console.log("Unenrollment failed: " + errorThrown);
+        }
+    });
+});
 
 // Student view Logout
 $("#logoutStudentView").on("click", function(){
